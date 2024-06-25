@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop Menu</title>
+     <!-- Bootstrap CSS -->
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('img/coffe1.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .menu-content {
+            padding: 20px;
+            max-width: 800px; /* Adjust maximum width as needed */
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .menu-content h1 {
+            font-size: 40px;
+            color: white; /* Coffee-like brown color */
+            margin-bottom: 20px;
+        }
+
+        .transparent-box {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+            display: flex;
+            flex-wrap: wrap; /* Wrap items to the next line */
+            gap: 3px; /* Space between each item */
+            justify-content: space-between;
+        }
+
+        .menu-section {
+            flex: 0 0 calc(50% - 3px); /* Two items per row with space between */
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            text-align: left;
+            overflow: hidden; /* Ensure content doesn't overflow */
+            position: relative; /* For hover effect */
+            transition: transform 0.3s ease-in-out;
+            width: auto;
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        .menu-section:hover {
+            transform: scale(1.02); /* Scale up slightly on hover */
+        }
+
+        .menu-section h2 {
+            font-size: 30px;
+            color: #6D4C41; /* Coffee-like brown color */
+            margin-bottom: 10px;
+        }
+
+        .menu-section img {
+            max-width: 150px; /* Adjust the size as needed */
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: block; /* Ensure image doesn't affect text flow */
+        }
+
+        .menu-section ul {
+           
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-section li {
+            font-size: 17px;
+            margin: 5px 0 0 10px;
+        }
+
+        .menu-content .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4E342E; /* Coffee-like brown */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .menu-content .btn:hover {
+            background-color: #6D4C41; /* Lighter coffee-like brown */
+        }
+        
+       button {
+        display: flex;
+        height: 2em;
+        width: 80px;
+        align-items: center;
+        justify-content: center;
+        color: #4E342E;
+        border-radius: 3px;
+        letter-spacing: 1px;
+        transition: all 0.2s linear;
+        cursor: pointer;
+        border: none;
+        background: #fff;
+        position: relative;
+        right: 270px;
+        }
+
+        button > svg {
+        margin-right: 5px;
+        margin-left: 5px;
+        font-size: 20px;
+        transition: all 0.4s ease-in;
+        }
+
+        button:hover > svg {
+        font-size: 1.2em;
+        transform: translateX(-5px);
+        }
+
+        button:hover {
+            background-color: #c7b3ad;
+        }
+        .content{
+
+            background-color:  rgba(14, 9, 8, 0.7);
+            width: 100%;
+        }
+        @media only screen and (min-width: 300px) and (max-width: 700px) {
+            .menu-section {
+            flex: 0 0 calc(50% - 10px); 
+            border: 1px solid black;
+            border-radius: 0;
+        }
+        }
+        @media only screen and (max-width: 950px) {
+
+
+        .menu-section {
+            flex: 0 0 calc(50% - 5px); 
+            
+            border: 1px solid black;
+            border-radius: 0;
+        }
+
+        .menu-content h1 {
+            font-size: 30px; 
+        }
+
+        .transparent-box {
+            display: block; 
+        }
+
+        .menu-section img {
+           width: 100px;
+           height: 100px;
+        }
+        button {
+        display: flex;
+        height: 2em;
+        width: 80px;
+        align-items: center;
+        justify-content: center;
+        color: #4E342E;
+        border-radius: 3px;
+        letter-spacing: 1px;
+        transition: all 0.2s linear;
+        cursor: pointer;
+        border: none;
+        background: #fff;
+        position: relative;
+       left: 1px;
+        }
+
+        button > svg {
+        margin-right: 5px;
+        margin-left: 5px;
+        font-size: 20px;
+        transition: all 0.4s ease-in;
+        }
+
+        button:hover > svg {
+        font-size: 1.2em;
+        transform: translateX(-5px);
+        }
+
+        button:hover {
+            background-color: #c7b3ad;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+    <div class="menu-content">
+       <a href="index.html"><button>
+            <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024"><path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path></svg>
+            <span>Back</span>
+          </button></a> 
+        <h1>Menu</h1>
+        <div class="transparent-box">
+            <div class="menu-section">
+                <h2>Espresso</h2>
+                <img src="img/espresso.png" alt="Espresso">
+                <ul>
+                    <li>Single Shot Espresso - $2.00</li>
+                    <li>Double Shot Espresso - $3.00</li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Iced Latte</h2>
+                <img src="img/iced.webp" alt="Latte">
+                <ul>
+                    <li>Classic Latte - $4.00</li>
+                    <li>Vanilla Latte - $4.50</li>
+                    <li>Caramel Latte - $4.50</li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Cappuccino</h2>
+                <img src="img/cappucino.png" alt="Cappuccino">
+                <ul>
+                    <li>Classic Cappuccino - $4.00</li>
+                    <li>Mocha Cappuccino - $4.50</li>
+                    <li>Hazelnut Cappuccino - $4.50</li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Affogato</h2>
+                <img src="img/affogato.png" alt="Pour-Over">
+                <ul>
+                    <li>Single Origin Affogato - $5.00</li>
+                    <li>Blended Affogato - $4.50</li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Extras</h2>
+                <ul>
+                    <li>Almond Milk - $0.50</li>
+                    <li>Soy Milk - $0.50</li>
+                    <li>Oat Milk - $0.50</li>
+                    <li>Flavor Shots - $0.50</li>
+                </ul>
+            </div>
+        </div>
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  
+        .parallax {
+            height: 100vh; /* Full viewport height */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+        .parallax1 {
+            background-image: url('img/coffe1.jpg');
+        }
+
+        .parallax2 {
+            background-image: url('img/coffe1.jpg');
+        }
+        .coffee-beans-animation {
+   position: relative;
+    top: 50px;
+   left: 180px;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: url('img/beans.png') no-repeat center center;
+    background-size: contain;
+    animation: coffeeBeansEffect 10s linear infinite;
+}
+
+@keyframes coffeeBeansEffect {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+       
+
+       
+        .content {
+            height: 100vh;
+            background-color:  rgba(14, 9, 8, 0.7);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+       
+     
+
+        .content .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            background-color: #6D4C41;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .content .btn:hover {
+            background-color: #4E342E;
+        }
+
+
+        .content h1 {
+    font-size: 40px;
+    margin-top: 0;
+    color: white;
+        }
+
+
+        .content p {
+            font-size: 17px;
+            margin: 13px;
+            font-weight: 10;
+            color: #3e2723;
+        }
+        .transparent-box {
+            background-color: rgba(255, 255, 255, 0.808);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 20px auto;
+            color: #fff;
+        }
+
+        .section {
+            padding: 60px 20px;
+        }
+
+    
+        .quote {
+            position: relative;
+            
+            left: 52%;
+            width: 600px;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .smoke {
+            position: relative;
+            top: 200px;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background: url('img/smoke.png') no-repeat center center;
+            background-size: contain;
+            animation: smokeEffect 10s linear infinite;
+        }
+
+        @keyframes smokeEffect {
+            0% {
+                transform: translateX(-50%) translateY(0) scale(0.5);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateX(-50%) translateY(-100px) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-50%) translateY(-200px) scale(1.5);
+                opacity: 0;
+            }
+        }
+        .section-light {
+    background-color: #3d3d3d4d;
+    color: #3e2723;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    height: 500px;
+}
+
+.transparent-box2 {
+    background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: left; /* Align text to the left for better readability */
+}
+
+.about-us h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.about-us p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #3e2723; 
+}
+
+.btn-learn-more {
+    color: #fff;
+    background-color: #4E342E; /* Coffee-like brown */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto; /* Center align the button */
+}
+
+.btn-learn-more:hover {
+    background-color: #6D4C41; /* Lighter coffee-like brown */
+}
+
+.parallax3 {
+  background-color: white;
+  background-image: url('img/coffe1.jpg') ;
+    height: 130vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3e2723; /* Coffee color */
+
+        }
+        .contact-container {
+    background: rgba(255, 255, 255, 0.884); /* Transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+   
+    width: 100%; /* Slightly reduced width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.contact-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em; /* Slightly smaller font size */
+    color: #3e2723; /* Coffee color */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #3e2723; /* Coffee color */
+    width: 80%; /* Align with input width */
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 80%; /* Reduced width */
+    padding: 8px; /* Reduced padding */
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #3e2723; /* Coffee color */
+    font-size: 0.9em; /* Reduced font size */
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent */
+    color: #3e2723; /* Coffee color */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #3e2723; /* Coffee color */
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #795548; /* Coffee color */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    width: 80%; /* Align with input width */
+    margin-top: 10px; /* Added margin-top for better spacing */
+}
+
+.contact-form button:hover {
+    background-color: #6d4c41; /* Darker coffee color */
+}
+
+.info {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #3e2723; /* Coffee color */
+}
+
+.social-media a {
+    margin: 0 10px;
+    color: #3e2723; /* Coffee color */
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.social-media a:hover {
+    color: #795548; /* Coffee color */
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #3e2723; /* Coffee color */
+}
+
+.footer a {
+    color: #795548; /* Coffee color */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    margin-top: 10px;
+}
+.contentContact{
+    background-color:  rgba(14, 9, 8, 0.7);
+    width: 100%;
+}
+
+.social-media {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-media p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #3e2723;
+            font-size: 24px;
+        }
+
+        .social-media a:hover {
+            color: #3e2723b0;
+        }
+
+.genie{
+    width: 240px;
+    height: 240px;
+    position: fixed;
+    left: 950px;
+    bottom: 100px;
+    animation: floatGenie 5s infinite alternate; /* Adjust animation duration and timing */
+    z-index: 9999; /* Ensures the genie stays above other content */
+}
+
+@keyframes floatGenie {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}    
+@media only screen and (max-width: 975px){
+    .parallax {
+            height: 50vh; 
+            background-attachment: scroll;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+        .parallax1 {
+            background-image: url('img/coffe1.jpg');
+        }
+
+        .parallax2 {
+            background-image: none;
+        }
+        .coffee-beans-animation {
+   display: none;
+}
+
+@keyframes coffeeBeansEffect {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+       
+    .content {
+            height: 70vh;
+            background-color: white;
+            background-image: none;
+            background-attachment: scroll;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+       
+     
+
+        .content .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            background-color:  #3e2723;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+           
+        }
+
+        .content .btn:hover {
+            background-color: #4E342E;
+        }
+
+
+        .content h1 {
+    font-size: 25px;
+    margin-top: 0;
+    position: relative;
+    bottom: 30px;
+    color:  #3e2723;
+        }
+
+
+        .content p {
+            font-size: 16px;
+            line-height: 30px;
+            margin: 13px;
+            font-weight: 10;
+            color: white;
+        }
+        .transparent-box {
+            background-color: RGB(54, 34, 20);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 20px auto;
+            position: relative;
+           
+        }
+
+      
+        .quote {
+            position: relative;
+            top: 170px;
+            left: 52%;
+            width: 400px;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .smoke {
+            position: relative;
+            top: 72px;
+            left: 40%;
+            width: 200px;
+            height: 200px;
+            background: url('img/smoke.png') no-repeat center center;
+            background-size: contain;
+            animation: smokeEffect 10s linear infinite;
+        }
+
+      
+    .section-light {
+    background-color:  RGB(54, 34, 20);
+    text-align: center;
+    height: 850px;
+    position: relative;
+    top: 200px;
+   
+}
+
+ .contact-container {
+    background: rgb(255, 255, 255); /* Transparent white background */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 100%; /* Slightly reduced width */
+    border-radius: 0;
+    height: 750px;
+    top: 500px;
+}
+
+.contact-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em; /* Slightly smaller font size */
+    color: #3e2723; /* Coffee color */
+    position: relative;
+    right: 10px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 70px;
+    right: 15px;
+}
+
+.contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #3e2723; /* Coffee color */
+    width: 80%; /* Align with input width */
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 80%; /* Reduced width */
+    padding: 8px; /* Reduced padding */
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #3e2723; /* Coffee color */
+    font-size: 0.9em; /* Reduced font size */
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent */
+    color: #3e2723; /* Coffee color */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #3e2723; /* Coffee color */
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #3e2723;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    width: 80%; 
+    margin-top: 10px; 
+}
+
+.contact-form button:hover {
+    background-color: #6d4c41; /* Darker coffee color */
+}
+
+
+.social-media a {
+    margin: 0 10px;
+    color: #3e2723; /* Coffee color */
+    text-decoration: none;
+    font-size: 1.5em;
+    position: relative;
+    top: 100px;
+    right: 15px;
+}
+.social-media p {
+            font-size: 15px;
+           position: relative;
+           top: 100px;
+           margin: 10px;
+           right: 15px;
+        }
+
+.social-media a:hover {
+    color: #795548; /* Coffee color */
+}
+
+.footer {
+   
+    font-size: 11px;
+    color: #3e2723; /* Coffee color */
+    position: relative;
+    top: 150px;
+    right: 15px;
+}
+
+.footer a {
+    color: #795548; /* Coffee color */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    margin-top: 10px;
+}
+.contentContact{
+    background-color:  rgba(14, 9, 8, 0.7);
+    width: 100%;
+}
+.transparent-box2 {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: left; 
+}
+
+.about-us h2 {
+    font-size: 25px;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.about-us p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #3e2723; 
+}
+
+.btn-learn-more {
+    color: #fff;
+    background-color: #3e2723;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto; 
+}
+
+.btn-learn-more:hover {
+    background-color: #6D4C41; 
+}
+
+
+.genie{
+    width: 140px;
+    height: 140px;
+    position: fixed;
+    left: 250px;
+    bottom: 100px;
+    animation: floatGenie 5s infinite alternate; 
+    z-index: 9999; 
+}
+
+}
+@media only screen and (max-width: 667px){
+    .parallax {
+            height: 50vh; /* Full viewport height */
+            background-attachment: scroll;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+        .parallax1 {
+            background-image: url('img/coffe1.jpg');
+        }
+
+        .parallax2 {
+            background-image: none;
+        }
+        .coffee-beans-animation {
+   display: none;
+}
+
+@keyframes coffeeBeansEffect {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+       
+    .content {
+            height: 70vh;
+            background-color: white;
+            background-image: none;
+            background-attachment: scroll;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+       
+     
+
+        .content .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            background-color:  #3e2723;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+           
+        }
+
+        .content .btn:hover {
+            background-color: #4E342E;
+        }
+
+
+        .content h1 {
+    font-size: 20px;
+   margin: 10px 0 40px 0;
+    position: relative;
+    top: 30px;
+    color:  #3e2723;
+        }
+
+
+        .content p {
+            font-size: 16px;
+            line-height: 30px;
+            margin: 13px;
+            font-weight: 10;
+            color: white;
+        }
+        .transparent-box {
+            background-color: RGB(54, 34, 20);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 20px auto;
+            position: relative;
+           
+        }
+
+      
+        .quote {
+            position: relative;
+            top: 70px;
+            left: 52%;
+            width: 400px;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .smoke {
+            position: relative;
+            top: 27px;
+            left: 40%;
+            width: 200px;
+            height: 200px;
+            background: url('img/smoke.png') no-repeat center center;
+            background-size: contain;
+            animation: smokeEffect 10s linear infinite;
+        }
+
+      
+    .section-light {
+    background-color:  RGB(54, 34, 20);
+    text-align: center;
+    height: 850px;
+    position: relative;
+    top: 200px;
+   
+}
+
+ .contact-container {
+    background: rgb(255, 255, 255); /* Transparent white background */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 100%; /* Slightly reduced width */
+    border-radius: 0;
+    height: 670px;
+    top: 670px;
+}
+
+.contact-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em; /* Slightly smaller font size */
+    color: #3e2723; /* Coffee color */
+    position: relative;
+    right: 10px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 70px;
+    right: 15px;
+}
+
+.contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #3e2723; /* Coffee color */
+    width: 80%; /* Align with input width */
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 80%; /* Reduced width */
+    padding: 8px; /* Reduced padding */
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #3e2723; /* Coffee color */
+    font-size: 0.9em; /* Reduced font size */
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent */
+    color: #3e2723; /* Coffee color */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #3e2723; /* Coffee color */
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #3e2723;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    width: 80%; 
+    margin-top: 10px; 
+}
+
+.contact-form button:hover {
+    background-color: #6d4c41; /* Darker coffee color */
+}
+
+
+.social-media a {
+    margin: 0 10px;
+    color: #3e2723; /* Coffee color */
+    text-decoration: none;
+    font-size: 1.5em;
+    position: relative;
+    top: 100px;
+    right: 15px;
+}
+.social-media p {
+            font-size: 15px;
+           position: relative;
+           top: 100px;
+           margin: 10px;
+           right: 15px;
+        }
+
+.social-media a:hover {
+    color: #795548; /* Coffee color */
+}
+
+.footer {
+   
+    font-size: 11px;
+    color: #3e2723; /* Coffee color */
+    position: relative;
+    top: 150px;
+    right: 15px;
+}
+
+.footer a {
+    color: #795548; /* Coffee color */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    margin-top: 10px;
+}
+.contentContact{
+    background-color:  rgba(14, 9, 8, 0.7);
+    width: 100%;
+}
+.transparent-box2 {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: left; 
+}
+
+.about-us h2 {
+    font-size: 25px;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.about-us p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #3e2723; 
+}
+
+.btn-learn-more {
+    color: #fff;
+    background-color: #3e2723;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto; 
+}
+
+.btn-learn-more:hover {
+    background-color: #6D4C41; 
+}
+
+
+.genie{
+    width: 140px;
+    height: 140px;
+    position: fixed;
+    left: 250px;
+    bottom: 100px;
+    animation: floatGenie 5s infinite alternate; 
+    z-index: 9999; 
+}
+
+}
+
+</style>
+</head>
+<body>
+    <canvas id="particles"></canvas>
+    <div class="parallax parallax1">
+        <div class="smoke"></div>
+        <img class="genie" src="img/genie.png" alt="">
+        <div class="quote" id="quote">But first, coffee.</div>
+        
+    </div>
+    <div class="parallax parallax2">
+    <div class="content">
+        <h1>Welcome to Our Coffee Shop</h1>
+        <div class="transparent-box">
+            <p>We offer a wide variety of coffee blends and brews to satisfy every palate.
+             From classic espresso to exotic iced latte.</p>
+             <div class="coffee-beans-animation"></div>
+            <p>Our coffee shop is a cozy haven for coffee enthusiasts.
+             Whether you're looking for a quiet place to work, a spot to catch up with friends,
+             or simply a moment to relax, we have the perfect ambiance for you.</p>
+        </div>
+        <a href="menu.html" class="btn">Explore Our Menu</a>
+    </div>
+    </div>
+    <div class="parallax parallax2">
+    <div class="section section-light py-5 about-us">
+        <div class="container">
+            <h2>ABOUT US</h2>
+            <div class="transparent-box2 about">
+                <p>
+                    At our coffee shop, we believe that coffee is more than just a beverage; it’s a way of life. Our passion for coffee drives us
+                     to source the finest beans and create exceptional brews. Whether you are a coffee connoisseur or a casual drinker, we are dedicated to providing you with the best coffee experience possible.
+                </p>
+                <p>
+                    Step into our cozy haven where the aroma of freshly brewed coffee greets you, and let our skilled baristas craft the perfect cup for you. Enjoy a moment of tranquility in our warm and inviting ambiance, or catch up with friends over a delightful cup of coffee. At our coffee shop, every cup tells a story, and we invite you to be part of ours.
+                </p>
+                
+                <button class="btn btn-learn-more">Learn More</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+   
+        
+        <div class="contact-container">
+            
+            <h2>CONTACT US</h2>
+            <form class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+            
+            <div class="social-media">
+                <p>FOLLOW US</p>
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+    
+            
+            <div class="footer">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a>
+                <p>&copy; 2024 Frayji Coffee Shop. All rights reserved.</p>
+            </div>
+        </div>
+        </div>
+
+    
+
+    <script>
+        const quotes = [
+            "Coffee is a hug in a mug.",
+            "Coffee and friends make the perfect blend.",
+            "Life happens, coffee helps.",
+            "Coffee is a hug in a mug.",
+            "Espresso yourself!",
+            "Caffeine and kindness."
+        ];
+
+        let currentQuoteIndex = 0;
+
+        function showNextQuote() {
+            const quoteElement = document.getElementById('quote');
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+            quoteElement.innerText = quotes[currentQuoteIndex];
+        }
+
+        setInterval(showNextQuote, 1000);
+    </script>
+	<script>
+        const canvas = document.getElementById('particles');
+        const context = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+
+        function Particle() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 5 + 1;
+            this.speedX = Math.random() * 3 - 1.5;
+            this.speedY = Math.random() * 3 - 1.5;
+        }
+
+        Particle.prototype.update = function() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.size > 0.2) this.size -= 0.1;
+        };
+
+        Particle.prototype.draw = function() {
+            context.fillStyle = '#4E342E';
+            context.strokeStyle = '#4E342E';
+            context.lineWidth = 2;
+
+            context.beginPath();
+            context.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            context.closePath();
+            context.fill();
+            context.stroke();
+        };
+
+        function createParticles() {
+            for (let i = 0; i < 50; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+
+            requestAnimationFrame(animateParticles);
+        }
+
+        createParticles();
+        animateParticles();
+    </script>
+</body>
+</html>
